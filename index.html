@@ -1,0 +1,1135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hades' Pomegranates</title>
+  <meta name="description" content="An interactive character directory inspired by the myth of Hades and Persephone. Choose a pomegranate, discover their story, and taste their presence in Google AI Studio.">
+  <meta name="theme-color" content="#F6EFE5">
+
+  <!-- Favicon: Botanical Pomegranate Motif -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='18' r='11' fill='%239E3040'/%3E%3Cpath d='M16 7 L14 3 L16 5 L18 3 Z' fill='%23672D38'/%3E%3Ccircle cx='16' cy='18' r='4' fill='%23C98F92' opacity='0.4'/%3E%3C/svg%3E">
+
+  <!-- Typography: Cormorant Garamond (Editorial Serif) & Inter (Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Subtle Paper Grain Overlay -->
+  <div class="paper-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Underworld Spores & Mist Canvas -->
+  <canvas id="ambient-particles" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar with Minimal Music Control -->
+  <header class="site-header">
+    <a href="#garden" class="brand-mark" id="brand-link" aria-label="Hades' Pomegranates Home">
+      <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C11.5 2 11 2.8 11 3.5C9 3.8 6 6 5.5 10C5 14.5 8 20.5 12 21C16 20.5 19 14.5 18.5 10C18 6 15 3.8 13 3.5C13 2.8 12.5 2 12 2ZM12 8C13.7 8 15 9.8 15 12C15 14.2 13.7 16 12 16C10.3 16 9 14.2 9 12C9 9.8 10.3 8 12 8Z"/>
+      </svg>
+      <span>Hades' Pomegranates</span>
+    </a>
+
+    <div class="header-controls">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#garden" class="nav-link active" id="nav-garden">The Garden</a>
+        <a href="#archive" class="nav-link" id="nav-archive">Archive</a>
+      </nav>
+
+      <!-- Minimal Atmospheric Music Control -->
+      <button id="music-toggle" class="music-toggle" type="button" aria-label="Turn music on">
+        <span class="music-icon" aria-hidden="true">♫</span>
+        <span class="music-label">SOUND</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Stage Area for Views -->
+  <main class="view-stage">
+
+    <!-- =======================================================================
+         1. THE GARDEN VIEW (Primary Interactive Experience)
+         ======================================================================= -->
+    <section id="garden-view" class="view-section active" aria-label="The Pomegranate Garden">
+      
+      <!-- Poetic Prologue -->
+      <header class="garden-prologue">
+        <h1 class="garden-title">Hades' Pomegranates</h1>
+        <div class="garden-poem" aria-label="Prologue poem">
+          <span>Pick one pomegranate.</span>
+          <span>Give'em a taste.</span>
+          <span>Decide</span>
+          <span>whether you should stay.</span>
+        </div>
+      </header>
+
+      <!-- The Pomegranate Tree Interactive Stage -->
+      <div class="tree-stage" id="tree-stage">
+        <div class="tree-svg-container">
+          <svg class="tree-svg" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An ancient pomegranate tree with heavy fruit hanging from its branches">
+            <defs>
+              <!-- Branch Bark Gradients -->
+              <linearGradient id="barkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4E2F38"/>
+                <stop offset="50%" stop-color="#3A2128"/>
+                <stop offset="100%" stop-color="#241419"/>
+              </linearGradient>
+
+              <linearGradient id="boughHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#73545D"/>
+                <stop offset="100%" stop-color="#382027"/>
+              </linearGradient>
+
+              <!-- Leaf Gradients -->
+              <linearGradient id="leafGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#9DB08A"/>
+                <stop offset="100%" stop-color="#586749"/>
+              </linearGradient>
+
+              <linearGradient id="leafGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#B2C29F"/>
+                <stop offset="100%" stop-color="#71805E"/>
+              </linearGradient>
+
+              <!-- Pomegranate Fruit Gradients -->
+              <radialGradient id="fruitGrad1" cx="38%" cy="32%" r="65%">
+                <stop offset="0%" stop-color="#D97280"/>
+                <stop offset="45%" stop-color="#A52E40"/>
+                <stop offset="85%" stop-color="#6E1F2C"/>
+                <stop offset="100%" stop-color="#46101B"/>
+              </radialGradient>
+
+              <radialGradient id="fruitGrad2" cx="35%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#DE818E"/>
+                <stop offset="40%" stop-color="#9C2D3E"/>
+                <stop offset="85%" stop-color="#641B26"/>
+                <stop offset="100%" stop-color="#3D0F17"/>
+              </radialGradient>
+
+              <radialGradient id="fruitGrad3" cx="42%" cy="35%" r="62%">
+                <stop offset="0%" stop-color="#E28B97"/>
+                <stop offset="50%" stop-color="#A33244"/>
+                <stop offset="90%" stop-color="#631B27"/>
+                <stop offset="100%" stop-color="#42131C"/>
+              </radialGradient>
+
+              <radialGradient id="fruitAura" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C98F92" stop-opacity="0.5"/>
+                <stop offset="60%" stop-color="#B89B68" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#B89B68" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Underworld Mound & Roots -->
+            <g class="tree-roots" opacity="0.95">
+              <path d="M260 760 C380 735, 620 735, 740 760 C780 768, 860 785, 920 800 L80 800 C140 785, 220 768, 260 760 Z" fill="#2E1C22" opacity="0.45"/>
+              <path d="M420 740 C430 760, 370 785, 310 800" stroke="#3A2128" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <path d="M470 745 C490 770, 520 788, 560 800" stroke="#321D23" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M540 740 C580 765, 650 785, 710 800" stroke="#3D232A" stroke-width="11" stroke-linecap="round" fill="none"/>
+            </g>
+
+            <!-- Main Trunk & Twisted Boughs -->
+            <g class="tree-trunk-boughs">
+              <!-- Trunk -->
+              <path d="M440 740 C445 680, 435 600, 460 520 C480 450, 455 390, 485 330 C495 305, 520 300, 535 330 C560 380, 545 460, 560 530 C580 610, 570 670, 580 740 Z" fill="url(#barkGradient)"/>
+              
+              <!-- Bark Contours & Organic Gnarling -->
+              <path d="M465 710 C460 640, 475 580, 480 500 C490 440, 480 380, 500 340" stroke="url(#boughHighlight)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+              <path d="M545 710 C535 630, 550 560, 535 480 C525 430, 535 370, 520 340" stroke="#241419" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.75"/>
+
+              <!-- Primary Left Major Boughs -->
+              <!-- Lower Left Branch Network (Fruits 01, 02, 03, 04, 05) -->
+              <path d="M470 490 C410 480, 340 485, 270 470 C220 460, 170 470, 140 470" stroke="url(#barkGradient)" stroke-width="18" stroke-linecap="round" fill="none"/>
+              <path d="M260 470 C240 495, 210 525, 195 520" stroke="url(#barkGradient)" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <path d="M240 465 C230 450, 225 435, 220 425" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M200 465 C180 440, 170 415, 160 385" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M320 480 C300 485, 290 490, 280 475" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+              <!-- Mid Left Branch Network (Fruits 06, 07, 08, 09, 10) -->
+              <path d="M480 410 C420 390, 340 370, 260 365 C200 360, 150 330, 115 305" stroke="url(#barkGradient)" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M330 375 C315 350, 310 330, 305 315" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M270 365 C260 370, 255 372, 250 355" stroke="url(#barkGradient)" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M230 360 C210 340, 195 330, 185 310" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M250 360 C245 320, 240 295, 235 270" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+              <!-- Upper Left Branch Network (Fruits 11, 12, 13, 14, 15) -->
+              <path d="M495 330 C470 270, 420 220, 360 180 C320 160, 260 180, 205 185" stroke="url(#barkGradient)" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M420 230 C430 190, 435 160, 435 130" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M390 235 C380 260, 370 275, 365 265" stroke="url(#barkGradient)" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M370 190 C365 185, 360 180, 360 170" stroke="url(#barkGradient)" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M320 180 C305 200, 295 220, 290 215" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+              <!-- Primary Right Major Boughs -->
+              <!-- Upper Right Branch Network (Fruits 16, 17, 18, 19, 20) -->
+              <path d="M515 330 C530 260, 560 200, 610 150 C630 130, 660 160, 690 180" stroke="url(#barkGradient)" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M530 250 C532 200, 535 160, 535 125" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M580 180 C600 165, 610 155, 615 140" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M560 220 C575 220, 580 225, 585 210" stroke="url(#barkGradient)" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M630 220 C645 250, 655 270, 660 260" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+              <!-- Mid Right Branch Network (Fruits 21, 22, 23, 24, 25) -->
+              <path d="M535 390 C600 370, 680 340, 760 300 C810 280, 850 300, 895 320" stroke="url(#barkGradient)" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M690 340 C720 300, 740 260, 750 225" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M750 310 C790 295, 815 285, 825 270" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M710 350 C725 345, 735 340, 740 325" stroke="url(#barkGradient)" stroke-width="7" stroke-linecap="round" fill="none"/>
+              <path d="M780 330 C810 360, 825 375, 830 365" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+              <!-- Lower Right Branch Network (Fruits 26, 27, 28, 29, 30) -->
+              <path d="M550 490 C610 470, 690 460, 760 450 C820 440, 860 430, 900 415" stroke="url(#barkGradient)" stroke-width="18" stroke-linecap="round" fill="none"/>
+              <path d="M670 470 C695 445, 705 430, 715 415" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M740 460 C780 465, 800 455, 810 440" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M690 480 C710 505, 720 520, 730 505" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M770 460 C800 490, 825 515, 835 510" stroke="url(#barkGradient)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            </g>
+
+            <!-- Organic Foliage Canopy (Delicate Leaves with subtle CSS sway) -->
+            <g class="tree-foliage" opacity="0.94">
+              <!-- Left Foliage Clusters -->
+              <g class="sway-leaf-gentle">
+                <path d="M110 320 C95 305, 85 280, 100 260 C115 275, 125 300, 110 320 Z" fill="url(#leafGrad1)"/>
+                <path d="M135 310 C145 290, 165 285, 175 305 C165 325, 145 330, 135 310 Z" fill="url(#leafGrad2)"/>
+                <path d="M150 400 C135 385, 130 365, 145 355 C160 365, 165 385, 150 400 Z" fill="url(#leafGrad1)"/>
+                <path d="M180 380 C195 365, 215 370, 220 390 C200 405, 180 400, 180 380 Z" fill="url(#leafGrad2)"/>
+                <path d="M130 480 C115 465, 110 445, 125 435 C140 445, 145 465, 130 480 Z" fill="url(#leafGrad1)"/>
+                <path d="M175 515 C160 500, 155 480, 170 470 C185 480, 190 500, 175 515 Z" fill="url(#leafGrad2)"/>
+                <path d="M210 435 C200 415, 205 395, 225 390 C245 400, 240 420, 210 435 Z" fill="url(#leafGrad1)"/>
+                <path d="M270 480 C260 460, 265 440, 285 435 C305 445, 300 465, 270 480 Z" fill="url(#leafGrad2)"/>
+              </g>
+
+              <g class="sway-leaf-delayed">
+                <path d="M195 195 C180 175, 175 150, 195 135 C215 150, 220 175, 195 195 Z" fill="url(#leafGrad1)"/>
+                <path d="M215 185 C235 170, 255 175, 260 195 C240 210, 220 205, 215 185 Z" fill="url(#leafGrad2)"/>
+                <path d="M280 220 C270 200, 275 180, 295 175 C315 185, 310 205, 280 220 Z" fill="url(#leafGrad1)"/>
+                <path d="M350 175 C335 155, 340 135, 360 130 C380 140, 375 160, 350 175 Z" fill="url(#leafGrad2)"/>
+                <path d="M420 135 C405 115, 410 95, 430 90 C450 100, 445 120, 420 135 Z" fill="url(#leafGrad1)"/>
+                <path d="M350 270 C340 250, 345 230, 365 225 C385 235, 380 255, 350 270 Z" fill="url(#leafGrad2)"/>
+              </g>
+
+              <!-- Center Crown Foliage Clusters -->
+              <g class="sway-leaf-gentle">
+                <path d="M520 130 C505 110, 510 90, 530 85 C550 95, 545 115, 520 130 Z" fill="url(#leafGrad1)"/>
+                <path d="M540 140 C560 125, 580 130, 585 150 C565 165, 545 160, 540 140 Z" fill="url(#leafGrad2)"/>
+                <path d="M600 145 C585 125, 590 105, 610 100 C630 110, 625 130, 600 145 Z" fill="url(#leafGrad2)"/>
+                <path d="M675 185 C660 165, 665 145, 685 140 C705 150, 700 170, 675 185 Z" fill="url(#leafGrad1)"/>
+                <path d="M570 215 C560 195, 565 175, 585 170 C605 180, 600 200, 570 215 Z" fill="url(#leafGrad2)"/>
+                <path d="M645 265 C635 245, 640 225, 660 220 C680 230, 675 250, 645 265 Z" fill="url(#leafGrad1)"/>
+              </g>
+
+              <!-- Right Foliage Clusters -->
+              <g class="sway-leaf-delayed">
+                <path d="M735 230 C720 210, 725 190, 745 185 C765 195, 760 215, 735 230 Z" fill="url(#leafGrad1)"/>
+                <path d="M810 275 C795 255, 800 235, 820 230 C840 240, 835 260, 810 275 Z" fill="url(#leafGrad2)"/>
+                <path d="M880 325 C865 305, 870 285, 890 280 C910 290, 905 310, 880 325 Z" fill="url(#leafGrad1)"/>
+                <path d="M725 330 C715 310, 720 290, 740 285 C760 295, 755 315, 725 330 Z" fill="url(#leafGrad2)"/>
+                <path d="M815 370 C805 350, 810 330, 830 325 C850 335, 845 355, 815 370 Z" fill="url(#leafGrad1)"/>
+                <path d="M700 420 C685 400, 690 380, 710 375 C730 385, 725 405, 700 420 Z" fill="url(#leafGrad2)"/>
+                <path d="M795 445 C785 425, 790 405, 810 400 C830 410, 825 430, 795 445 Z" fill="url(#leafGrad1)"/>
+                <path d="M885 420 C870 400, 875 380, 895 375 C915 385, 910 405, 885 420 Z" fill="url(#leafGrad2)"/>
+                <path d="M715 510 C705 490, 710 470, 730 465 C750 475, 745 495, 715 510 Z" fill="url(#leafGrad1)"/>
+                <path d="M820 515 C810 495, 815 475, 835 470 C855 480, 850 500, 820 515 Z" fill="url(#leafGrad2)"/>
+              </g>
+            </g>
+
+            <!-- ===============================================================
+                 THE 30 INTERACTIVE POMEGRANATES (Deterministic Character Mapping)
+                 =============================================================== -->
+            <!-- POMEGRANATE 01 — Ã‚u DÆ°Æ¡ng Dá»¥c Tháº§n -->
+            <g class="pomegranate-interactive" id="pomegranate-01" data-id="pomegranate-01" role="button" tabindex="0" aria-label="Pomegranate I — Ã‚u DÆ°Æ¡ng Dá»¥c Tháº§n">
+              <path class="fruit-stem" d="M142 468 Q140 478 140 482" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M138 482 C133 478 130 482 132 486 C136 487 138 484 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M142 482 C147 478 150 482 148 486 C144 487 142 484 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="140 482">
+                <circle class="fruit-aura" cx="140" cy="498" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M134 513 L132 519 L136 516 L140 521 L144 516 L148 519 L146 513 Z" fill="#672D38"/>
+                <circle cx="140" cy="498" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="135" cy="493" rx="4.5" ry="7" transform="rotate(-24 135 493)" fill="#FFF" opacity="0.22"/>
+                <circle cx="133" cy="490" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="145" cy="503" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="140" cy="498" r="24"/>
+                <circle class="tasted-indicator" cx="140" cy="498" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="140" cy="498" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 02 — Tá»‘ng HÃ²a -->
+            <g class="pomegranate-interactive" id="pomegranate-02" data-id="pomegranate-02" role="button" tabindex="0" aria-label="Pomegranate II — Tá»‘ng HÃ²a">
+              <path class="fruit-stem" d="M197 518 Q195 528 195 532" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M193 532 C188 528 185 532 187 536 C191 537 193 534 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M197 532 C202 528 205 532 203 536 C199 537 197 534 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="195 532">
+                <circle class="fruit-aura" cx="195" cy="548" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M189 563 L187 569 L191 566 L195 571 L199 566 L203 569 L201 563 Z" fill="#672D38"/>
+                <circle cx="195" cy="548" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="190" cy="543" rx="4.5" ry="7" transform="rotate(-24 190 543)" fill="#FFF" opacity="0.22"/>
+                <circle cx="188" cy="540" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="200" cy="553" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="195" cy="548" r="24"/>
+                <circle class="tasted-indicator" cx="195" cy="548" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="195" cy="548" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 03 — Tá»‘ng HÃ²a -->
+            <g class="pomegranate-interactive" id="pomegranate-03" data-id="pomegranate-03" role="button" tabindex="0" aria-label="Pomegranate III — Tá»‘ng HÃ²a">
+              <path class="fruit-stem" d="M222 423 Q220 433 220 437" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M218 437 C213 433 210 437 212 441 C216 442 218 439 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M222 437 C227 433 230 437 228 441 C224 442 222 439 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="220 437">
+                <circle class="fruit-aura" cx="220" cy="453" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M214 468 L212 474 L216 471 L220 476 L224 471 L228 474 L226 468 Z" fill="#672D38"/>
+                <circle cx="220" cy="453" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="215" cy="448" rx="4.5" ry="7" transform="rotate(-24 215 448)" fill="#FFF" opacity="0.22"/>
+                <circle cx="213" cy="445" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="225" cy="458" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="220" cy="453" r="24"/>
+                <circle class="tasted-indicator" cx="220" cy="453" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="220" cy="453" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 04 — Äáº±ng Thiáº¿u Khanh -->
+            <g class="pomegranate-interactive" id="pomegranate-04" data-id="pomegranate-04" role="button" tabindex="0" aria-label="Pomegranate IV — Äáº±ng Thiáº¿u Khanh">
+              <path class="fruit-stem" d="M162 383 Q160 393 160 397" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M158 397 C153 393 150 397 152 401 C156 402 158 399 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M162 397 C167 393 170 397 168 401 C164 402 162 399 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="160 397">
+                <circle class="fruit-aura" cx="160" cy="413" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M154 428 L152 434 L156 431 L160 436 L164 431 L168 434 L166 428 Z" fill="#672D38"/>
+                <circle cx="160" cy="413" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="155" cy="408" rx="4.5" ry="7" transform="rotate(-24 155 408)" fill="#FFF" opacity="0.22"/>
+                <circle cx="153" cy="405" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="165" cy="418" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="160" cy="413" r="24"/>
+                <circle class="tasted-indicator" cx="160" cy="413" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="160" cy="413" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 05 — Thá»‹nh Cáº£nh HiÃªn -->
+            <g class="pomegranate-interactive" id="pomegranate-05" data-id="pomegranate-05" role="button" tabindex="0" aria-label="Pomegranate V — Thá»‹nh Cáº£nh HiÃªn">
+              <path class="fruit-stem" d="M282 473 Q280 483 280 487" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M278 487 C273 483 270 487 272 491 C276 492 278 489 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M282 487 C287 483 290 487 288 491 C284 492 282 489 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="280 487">
+                <circle class="fruit-aura" cx="280" cy="503" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M274 518 L272 524 L276 521 L280 526 L284 521 L288 524 L286 518 Z" fill="#672D38"/>
+                <circle cx="280" cy="503" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="275" cy="498" rx="4.5" ry="7" transform="rotate(-24 275 498)" fill="#FFF" opacity="0.22"/>
+                <circle cx="273" cy="495" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="285" cy="508" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="280" cy="503" r="24"/>
+                <circle class="tasted-indicator" cx="280" cy="503" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="280" cy="503" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 06 — Há»“ HoÃ ng Nam -->
+            <g class="pomegranate-interactive" id="pomegranate-06" data-id="pomegranate-06" role="button" tabindex="0" aria-label="Pomegranate VI — Há»“ HoÃ ng Nam">
+              <path class="fruit-stem" d="M117 303 Q115 313 115 317" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M113 317 C108 313 105 317 107 321 C111 322 113 319 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M117 317 C122 313 125 317 123 321 C119 322 117 319 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="115 317">
+                <circle class="fruit-aura" cx="115" cy="333" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M109 348 L107 354 L111 351 L115 356 L119 351 L123 354 L121 348 Z" fill="#672D38"/>
+                <circle cx="115" cy="333" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="110" cy="328" rx="4.5" ry="7" transform="rotate(-24 110 328)" fill="#FFF" opacity="0.22"/>
+                <circle cx="108" cy="325" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="120" cy="338" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="115" cy="333" r="24"/>
+                <circle class="tasted-indicator" cx="115" cy="333" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="115" cy="333" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 07 — Phan An DÆ°Æ¡ng -->
+            <g class="pomegranate-interactive" id="pomegranate-07" data-id="pomegranate-07" role="button" tabindex="0" aria-label="Pomegranate VII — Phan An DÆ°Æ¡ng">
+              <path class="fruit-stem" d="M187 308 Q185 318 185 322" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M183 322 C178 318 175 322 177 326 C181 327 183 324 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M187 322 C192 318 195 322 193 326 C189 327 187 324 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="185 322">
+                <circle class="fruit-aura" cx="185" cy="338" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M179 353 L177 359 L181 356 L185 361 L189 356 L193 359 L191 353 Z" fill="#672D38"/>
+                <circle cx="185" cy="338" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="180" cy="333" rx="4.5" ry="7" transform="rotate(-24 180 333)" fill="#FFF" opacity="0.22"/>
+                <circle cx="178" cy="330" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="190" cy="343" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="185" cy="338" r="24"/>
+                <circle class="tasted-indicator" cx="185" cy="338" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="185" cy="338" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 08 — Tráº§n Minh Kháº£i -->
+            <g class="pomegranate-interactive" id="pomegranate-08" data-id="pomegranate-08" role="button" tabindex="0" aria-label="Pomegranate VIII — Tráº§n Minh Kháº£i">
+              <path class="fruit-stem" d="M252 353 Q250 363 250 367" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M248 367 C243 363 240 367 242 371 C246 372 248 369 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M252 367 C257 363 260 367 258 371 C254 372 252 369 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="250 367">
+                <circle class="fruit-aura" cx="250" cy="383" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M244 398 L242 404 L246 401 L250 406 L254 401 L258 404 L256 398 Z" fill="#672D38"/>
+                <circle cx="250" cy="383" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="245" cy="378" rx="4.5" ry="7" transform="rotate(-24 245 378)" fill="#FFF" opacity="0.22"/>
+                <circle cx="243" cy="375" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="255" cy="388" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="250" cy="383" r="24"/>
+                <circle class="tasted-indicator" cx="250" cy="383" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="250" cy="383" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 09 — Tráº§n Minh SÆ¡n -->
+            <g class="pomegranate-interactive" id="pomegranate-09" data-id="pomegranate-09" role="button" tabindex="0" aria-label="Pomegranate IX — Tráº§n Minh SÆ¡n">
+              <path class="fruit-stem" d="M237 268 Q235 278 235 282" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M233 282 C228 278 225 282 227 286 C231 287 233 284 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M237 282 C242 278 245 282 243 286 C239 287 237 284 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="235 282">
+                <circle class="fruit-aura" cx="235" cy="298" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M229 313 L227 319 L231 316 L235 321 L239 316 L243 319 L241 313 Z" fill="#672D38"/>
+                <circle cx="235" cy="298" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="230" cy="293" rx="4.5" ry="7" transform="rotate(-24 230 293)" fill="#FFF" opacity="0.22"/>
+                <circle cx="228" cy="290" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="240" cy="303" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="235" cy="298" r="24"/>
+                <circle class="tasted-indicator" cx="235" cy="298" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="235" cy="298" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 10 — PhÃ³ TrÃ¬nh NgÃ´n -->
+            <g class="pomegranate-interactive" id="pomegranate-10" data-id="pomegranate-10" role="button" tabindex="0" aria-label="Pomegranate X — PhÃ³ TrÃ¬nh NgÃ´n">
+              <path class="fruit-stem" d="M307 313 Q305 323 305 327" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M303 327 C298 323 295 327 297 331 C301 332 303 329 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M307 327 C312 323 315 327 313 331 C309 332 307 329 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="305 327">
+                <circle class="fruit-aura" cx="305" cy="343" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M299 358 L297 364 L301 361 L305 366 L309 361 L313 364 L311 358 Z" fill="#672D38"/>
+                <circle cx="305" cy="343" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="300" cy="338" rx="4.5" ry="7" transform="rotate(-24 300 338)" fill="#FFF" opacity="0.22"/>
+                <circle cx="298" cy="335" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="310" cy="348" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="305" cy="343" r="24"/>
+                <circle class="tasted-indicator" cx="305" cy="343" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="305" cy="343" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 11 — TrÆ°Æ¡ng ÄÃ¬nh VÄ©nh NguyÃªn -->
+            <g class="pomegranate-interactive" id="pomegranate-11" data-id="pomegranate-11" role="button" tabindex="0" aria-label="Pomegranate XI — TrÆ°Æ¡ng ÄÃ¬nh VÄ©nh NguyÃªn">
+              <path class="fruit-stem" d="M207 183 Q205 193 205 197" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M203 197 C198 193 195 197 197 201 C201 202 203 199 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M207 197 C212 193 215 197 213 201 C209 202 207 199 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="205 197">
+                <circle class="fruit-aura" cx="205" cy="213" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M199 228 L197 234 L201 231 L205 236 L209 231 L213 234 L211 228 Z" fill="#672D38"/>
+                <circle cx="205" cy="213" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="200" cy="208" rx="4.5" ry="7" transform="rotate(-24 200 208)" fill="#FFF" opacity="0.22"/>
+                <circle cx="198" cy="205" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="210" cy="218" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="205" cy="213" r="24"/>
+                <circle class="tasted-indicator" cx="205" cy="213" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="205" cy="213" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 12 — Äáº·ng HoÃ ng QuÃ¢n -->
+            <g class="pomegranate-interactive" id="pomegranate-12" data-id="pomegranate-12" role="button" tabindex="0" aria-label="Pomegranate XII — Äáº·ng HoÃ ng QuÃ¢n">
+              <path class="fruit-stem" d="M292 213 Q290 223 290 227" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M288 227 C283 223 280 227 282 231 C286 232 288 229 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M292 227 C297 223 300 227 298 231 C294 232 292 229 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="290 227">
+                <circle class="fruit-aura" cx="290" cy="243" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M284 258 L282 264 L286 261 L290 266 L294 261 L298 264 L296 258 Z" fill="#672D38"/>
+                <circle cx="290" cy="243" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="285" cy="238" rx="4.5" ry="7" transform="rotate(-24 285 238)" fill="#FFF" opacity="0.22"/>
+                <circle cx="283" cy="235" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="295" cy="248" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="290" cy="243" r="24"/>
+                <circle class="tasted-indicator" cx="290" cy="243" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="290" cy="243" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 13 — LÃª Quá»‘c Duy -->
+            <g class="pomegranate-interactive" id="pomegranate-13" data-id="pomegranate-13" role="button" tabindex="0" aria-label="Pomegranate XIII — LÃª Quá»‘c Duy">
+              <path class="fruit-stem" d="M367 263 Q365 273 365 277" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M363 277 C358 273 355 277 357 281 C361 282 363 279 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M367 277 C372 273 375 277 373 281 C369 282 367 279 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="365 277">
+                <circle class="fruit-aura" cx="365" cy="293" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M359 308 L357 314 L361 311 L365 316 L369 311 L373 314 L371 308 Z" fill="#672D38"/>
+                <circle cx="365" cy="293" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="360" cy="288" rx="4.5" ry="7" transform="rotate(-24 360 288)" fill="#FFF" opacity="0.22"/>
+                <circle cx="358" cy="285" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="370" cy="298" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="365" cy="293" r="24"/>
+                <circle class="tasted-indicator" cx="365" cy="293" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="365" cy="293" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 14 — KhÆ°Æ¡ng VÅ© HoÃ ng Minh -->
+            <g class="pomegranate-interactive" id="pomegranate-14" data-id="pomegranate-14" role="button" tabindex="0" aria-label="Pomegranate XIV — KhÆ°Æ¡ng VÅ© HoÃ ng Minh">
+              <path class="fruit-stem" d="M362 168 Q360 178 360 182" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M358 182 C353 178 350 182 352 186 C356 187 358 184 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M362 182 C367 178 370 182 368 186 C364 187 362 184 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="360 182">
+                <circle class="fruit-aura" cx="360" cy="198" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M354 213 L352 219 L356 216 L360 221 L364 216 L368 219 L366 213 Z" fill="#672D38"/>
+                <circle cx="360" cy="198" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="355" cy="193" rx="4.5" ry="7" transform="rotate(-24 355 193)" fill="#FFF" opacity="0.22"/>
+                <circle cx="353" cy="190" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="365" cy="203" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="360" cy="198" r="24"/>
+                <circle class="tasted-indicator" cx="360" cy="198" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="360" cy="198" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 15 — Julian Ravenshire -->
+            <g class="pomegranate-interactive" id="pomegranate-15" data-id="pomegranate-15" role="button" tabindex="0" aria-label="Pomegranate XV — Julian Ravenshire">
+              <path class="fruit-stem" d="M437 128 Q435 138 435 142" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M433 142 C428 138 425 142 427 146 C431 147 433 144 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M437 142 C442 138 445 142 443 146 C439 147 437 144 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="435 142">
+                <circle class="fruit-aura" cx="435" cy="158" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M429 173 L427 179 L431 176 L435 181 L439 176 L443 179 L441 173 Z" fill="#672D38"/>
+                <circle cx="435" cy="158" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="430" cy="153" rx="4.5" ry="7" transform="rotate(-24 430 153)" fill="#FFF" opacity="0.22"/>
+                <circle cx="428" cy="150" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="440" cy="163" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="435" cy="158" r="24"/>
+                <circle class="tasted-indicator" cx="435" cy="158" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="435" cy="158" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 16 — Elias Ravenshire -->
+            <g class="pomegranate-interactive" id="pomegranate-16" data-id="pomegranate-16" role="button" tabindex="0" aria-label="Pomegranate XVI — Elias Ravenshire">
+              <path class="fruit-stem" d="M537 123 Q535 133 535 137" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M533 137 C528 133 525 137 527 141 C531 142 533 139 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M537 137 C542 133 545 137 543 141 C539 142 537 139 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="535 137">
+                <circle class="fruit-aura" cx="535" cy="153" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M529 168 L527 174 L531 171 L535 176 L539 171 L543 174 L541 168 Z" fill="#672D38"/>
+                <circle cx="535" cy="153" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="530" cy="148" rx="4.5" ry="7" transform="rotate(-24 530 148)" fill="#FFF" opacity="0.22"/>
+                <circle cx="528" cy="145" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="540" cy="158" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="535" cy="153" r="24"/>
+                <circle class="tasted-indicator" cx="535" cy="153" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="535" cy="153" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 17 — Lucian Ravenshire -->
+            <g class="pomegranate-interactive" id="pomegranate-17" data-id="pomegranate-17" role="button" tabindex="0" aria-label="Pomegranate XVII — Lucian Ravenshire">
+              <path class="fruit-stem" d="M617 138 Q615 148 615 152" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M613 152 C608 148 605 152 607 156 C611 157 613 154 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M617 152 C622 148 625 152 623 156 C619 157 617 154 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="615 152">
+                <circle class="fruit-aura" cx="615" cy="168" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M609 183 L607 189 L611 186 L615 191 L619 186 L623 189 L621 183 Z" fill="#672D38"/>
+                <circle cx="615" cy="168" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="610" cy="163" rx="4.5" ry="7" transform="rotate(-24 610 163)" fill="#FFF" opacity="0.22"/>
+                <circle cx="608" cy="160" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="620" cy="173" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="615" cy="168" r="24"/>
+                <circle class="tasted-indicator" cx="615" cy="168" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="615" cy="168" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 18 — Adrien Ardent -->
+            <g class="pomegranate-interactive" id="pomegranate-18" data-id="pomegranate-18" role="button" tabindex="0" aria-label="Pomegranate XVIII — Adrien Ardent">
+              <path class="fruit-stem" d="M692 178 Q690 188 690 192" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M688 192 C683 188 680 192 682 196 C686 197 688 194 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M692 192 C697 188 700 192 698 196 C694 197 692 194 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="690 192">
+                <circle class="fruit-aura" cx="690" cy="208" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M684 223 L682 229 L686 226 L690 231 L694 226 L698 229 L696 223 Z" fill="#672D38"/>
+                <circle cx="690" cy="208" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="685" cy="203" rx="4.5" ry="7" transform="rotate(-24 685 203)" fill="#FFF" opacity="0.22"/>
+                <circle cx="683" cy="200" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="695" cy="213" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="690" cy="208" r="24"/>
+                <circle class="tasted-indicator" cx="690" cy="208" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="690" cy="208" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 19 — Cedric Maximilian -->
+            <g class="pomegranate-interactive" id="pomegranate-19" data-id="pomegranate-19" role="button" tabindex="0" aria-label="Pomegranate XIX — Cedric Maximilian">
+              <path class="fruit-stem" d="M587 208 Q585 218 585 222" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M583 222 C578 218 575 222 577 226 C581 227 583 224 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M587 222 C592 218 595 222 593 226 C589 227 587 224 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="585 222">
+                <circle class="fruit-aura" cx="585" cy="238" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M579 253 L577 259 L581 256 L585 261 L589 256 L593 259 L591 253 Z" fill="#672D38"/>
+                <circle cx="585" cy="238" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="580" cy="233" rx="4.5" ry="7" transform="rotate(-24 580 233)" fill="#FFF" opacity="0.22"/>
+                <circle cx="578" cy="230" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="590" cy="243" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="585" cy="238" r="24"/>
+                <circle class="tasted-indicator" cx="585" cy="238" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="585" cy="238" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 20 — Caspian Ravenshire -->
+            <g class="pomegranate-interactive" id="pomegranate-20" data-id="pomegranate-20" role="button" tabindex="0" aria-label="Pomegranate XX — Caspian Ravenshire">
+              <path class="fruit-stem" d="M662 258 Q660 268 660 272" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M658 272 C653 268 650 272 652 276 C656 277 658 274 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M662 272 C667 268 670 272 668 276 C664 277 662 274 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="660 272">
+                <circle class="fruit-aura" cx="660" cy="288" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M654 303 L652 309 L656 306 L660 311 L664 306 L668 309 L666 303 Z" fill="#672D38"/>
+                <circle cx="660" cy="288" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="655" cy="283" rx="4.5" ry="7" transform="rotate(-24 655 283)" fill="#FFF" opacity="0.22"/>
+                <circle cx="653" cy="280" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="665" cy="293" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="660" cy="288" r="24"/>
+                <circle class="tasted-indicator" cx="660" cy="288" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="660" cy="288" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 21 — Cha Kang Woo -->
+            <g class="pomegranate-interactive" id="pomegranate-21" data-id="pomegranate-21" role="button" tabindex="0" aria-label="Pomegranate XXI — Cha Kang Woo">
+              <path class="fruit-stem" d="M752 223 Q750 233 750 237" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M748 237 C743 233 740 237 742 241 C746 242 748 239 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M752 237 C757 233 760 237 758 241 C754 242 752 239 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="750 237">
+                <circle class="fruit-aura" cx="750" cy="253" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M744 268 L742 274 L746 271 L750 276 L754 271 L758 274 L756 268 Z" fill="#672D38"/>
+                <circle cx="750" cy="253" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="745" cy="248" rx="4.5" ry="7" transform="rotate(-24 745 248)" fill="#FFF" opacity="0.22"/>
+                <circle cx="743" cy="245" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="755" cy="258" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="750" cy="253" r="24"/>
+                <circle class="tasted-indicator" cx="750" cy="253" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="750" cy="253" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 22 — Kang Young Hwan -->
+            <g class="pomegranate-interactive" id="pomegranate-22" data-id="pomegranate-22" role="button" tabindex="0" aria-label="Pomegranate XXII — Kang Young Hwan">
+              <path class="fruit-stem" d="M827 268 Q825 278 825 282" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M823 282 C818 278 815 282 817 286 C821 287 823 284 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M827 282 C832 278 835 282 833 286 C829 287 827 284 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="825 282">
+                <circle class="fruit-aura" cx="825" cy="298" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M819 313 L817 319 L821 316 L825 321 L829 316 L833 319 L831 313 Z" fill="#672D38"/>
+                <circle cx="825" cy="298" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="820" cy="293" rx="4.5" ry="7" transform="rotate(-24 820 293)" fill="#FFF" opacity="0.22"/>
+                <circle cx="818" cy="290" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="830" cy="303" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="825" cy="298" r="24"/>
+                <circle class="tasted-indicator" cx="825" cy="298" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="825" cy="298" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 23 — Yoon Ha Neul -->
+            <g class="pomegranate-interactive" id="pomegranate-23" data-id="pomegranate-23" role="button" tabindex="0" aria-label="Pomegranate XXIII — Yoon Ha Neul">
+              <path class="fruit-stem" d="M742 323 Q740 333 740 337" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M738 337 C733 333 730 337 732 341 C736 342 738 339 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M742 337 C747 333 750 337 748 341 C744 342 742 339 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="740 337">
+                <circle class="fruit-aura" cx="740" cy="353" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M734 368 L732 374 L736 371 L740 376 L744 371 L748 374 L746 368 Z" fill="#672D38"/>
+                <circle cx="740" cy="353" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="735" cy="348" rx="4.5" ry="7" transform="rotate(-24 735 348)" fill="#FFF" opacity="0.22"/>
+                <circle cx="733" cy="345" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="745" cy="358" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="740" cy="353" r="24"/>
+                <circle class="tasted-indicator" cx="740" cy="353" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="740" cy="353" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 24 — Yoon Eun Woo -->
+            <g class="pomegranate-interactive" id="pomegranate-24" data-id="pomegranate-24" role="button" tabindex="0" aria-label="Pomegranate XXIV — Yoon Eun Woo">
+              <path class="fruit-stem" d="M897 318 Q895 328 895 332" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M893 332 C888 328 885 332 887 336 C891 337 893 334 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M897 332 C902 328 905 332 903 336 C899 337 897 334 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="895 332">
+                <circle class="fruit-aura" cx="895" cy="348" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M889 363 L887 369 L891 366 L895 371 L899 366 L903 369 L901 363 Z" fill="#672D38"/>
+                <circle cx="895" cy="348" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="890" cy="343" rx="4.5" ry="7" transform="rotate(-24 890 343)" fill="#FFF" opacity="0.22"/>
+                <circle cx="888" cy="340" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="900" cy="353" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="895" cy="348" r="24"/>
+                <circle class="tasted-indicator" cx="895" cy="348" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="895" cy="348" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 25 — Yoon Ji Ahn -->
+            <g class="pomegranate-interactive" id="pomegranate-25" data-id="pomegranate-25" role="button" tabindex="0" aria-label="Pomegranate XXV — Yoon Ji Ahn">
+              <path class="fruit-stem" d="M832 363 Q830 373 830 377" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M828 377 C823 373 820 377 822 381 C826 382 828 379 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M832 377 C837 373 840 377 838 381 C834 382 832 379 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="830 377">
+                <circle class="fruit-aura" cx="830" cy="393" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M824 408 L822 414 L826 411 L830 416 L834 411 L838 414 L836 408 Z" fill="#672D38"/>
+                <circle cx="830" cy="393" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="825" cy="388" rx="4.5" ry="7" transform="rotate(-24 825 388)" fill="#FFF" opacity="0.22"/>
+                <circle cx="823" cy="385" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="835" cy="398" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="830" cy="393" r="24"/>
+                <circle class="tasted-indicator" cx="830" cy="393" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="830" cy="393" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 26 — Satou Asahi -->
+            <g class="pomegranate-interactive" id="pomegranate-26" data-id="pomegranate-26" role="button" tabindex="0" aria-label="Pomegranate XXVI — Satou Asahi">
+              <path class="fruit-stem" d="M717 413 Q715 423 715 427" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M713 427 C708 423 705 427 707 431 C711 432 713 429 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M717 427 C722 423 725 427 723 431 C719 432 717 429 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="715 427">
+                <circle class="fruit-aura" cx="715" cy="443" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M709 458 L707 464 L711 461 L715 466 L719 461 L723 464 L721 458 Z" fill="#672D38"/>
+                <circle cx="715" cy="443" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="710" cy="438" rx="4.5" ry="7" transform="rotate(-24 710 438)" fill="#FFF" opacity="0.22"/>
+                <circle cx="708" cy="435" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="720" cy="448" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="715" cy="443" r="24"/>
+                <circle class="tasted-indicator" cx="715" cy="443" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="715" cy="443" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 27 — Kanzaki Yusei -->
+            <g class="pomegranate-interactive" id="pomegranate-27" data-id="pomegranate-27" role="button" tabindex="0" aria-label="Pomegranate XXVII — Kanzaki Yusei">
+              <path class="fruit-stem" d="M902 413 Q900 423 900 427" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M898 427 C893 423 890 427 892 431 C896 432 898 429 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M902 427 C907 423 910 427 908 431 C904 432 902 429 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="900 427">
+                <circle class="fruit-aura" cx="900" cy="443" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M894 458 L892 464 L896 461 L900 466 L904 461 L908 464 L906 458 Z" fill="#672D38"/>
+                <circle cx="900" cy="443" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="895" cy="438" rx="4.5" ry="7" transform="rotate(-24 895 438)" fill="#FFF" opacity="0.22"/>
+                <circle cx="893" cy="435" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="905" cy="448" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="900" cy="443" r="24"/>
+                <circle class="tasted-indicator" cx="900" cy="443" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="900" cy="443" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 28 — Tráº§n HoÃ i Nam -->
+            <g class="pomegranate-interactive" id="pomegranate-28" data-id="pomegranate-28" role="button" tabindex="0" aria-label="Pomegranate XXVIII — Tráº§n HoÃ i Nam">
+              <path class="fruit-stem" d="M812 438 Q810 448 810 452" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M808 452 C803 448 800 452 802 456 C806 457 808 454 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M812 452 C817 448 820 452 818 456 C814 457 812 454 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="810 452">
+                <circle class="fruit-aura" cx="810" cy="468" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M804 483 L802 489 L806 486 L810 491 L814 486 L818 489 L816 483 Z" fill="#672D38"/>
+                <circle cx="810" cy="468" r="17.5" fill="url(#fruitGrad1)"/>
+                <ellipse cx="805" cy="463" rx="4.5" ry="7" transform="rotate(-24 805 463)" fill="#FFF" opacity="0.22"/>
+                <circle cx="803" cy="460" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="815" cy="473" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="810" cy="468" r="24"/>
+                <circle class="tasted-indicator" cx="810" cy="468" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="810" cy="468" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 29 — Tráº§n LÃª VÄ©nh An -->
+            <g class="pomegranate-interactive" id="pomegranate-29" data-id="pomegranate-29" role="button" tabindex="0" aria-label="Pomegranate XXIX — Tráº§n LÃª VÄ©nh An">
+              <path class="fruit-stem" d="M732 503 Q730 513 730 517" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M728 517 C723 513 720 517 722 521 C726 522 728 519 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M732 517 C737 513 740 517 738 521 C734 522 732 519 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="730 517">
+                <circle class="fruit-aura" cx="730" cy="533" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M724 548 L722 554 L726 551 L730 556 L734 551 L738 554 L736 548 Z" fill="#672D38"/>
+                <circle cx="730" cy="533" r="17.5" fill="url(#fruitGrad2)"/>
+                <ellipse cx="725" cy="528" rx="4.5" ry="7" transform="rotate(-24 725 528)" fill="#FFF" opacity="0.22"/>
+                <circle cx="723" cy="525" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="735" cy="538" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="730" cy="533" r="24"/>
+                <circle class="tasted-indicator" cx="730" cy="533" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="730" cy="533" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+            <!-- POMEGRANATE 30 — Äáº·ng Kháº£i NguyÃªn -->
+            <g class="pomegranate-interactive" id="pomegranate-30" data-id="pomegranate-30" role="button" tabindex="0" aria-label="Pomegranate XXX — Äáº·ng Kháº£i NguyÃªn">
+              <path class="fruit-stem" d="M837 508 Q835 518 835 522" stroke="#4A3036" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path class="fruit-stem" d="M833 522 C828 518 825 522 827 526 C831 527 833 524 Z" fill="#71805E"/>
+              <path class="fruit-stem" d="M837 522 C842 518 845 522 843 526 C839 527 837 524 Z" fill="#889874"/>
+              <g class="fruit-body-group" transform-origin="835 522">
+                <circle class="fruit-aura" cx="835" cy="538" r="28" fill="url(#fruitAura)" opacity="0"/>
+                <path d="M829 553 L827 559 L831 556 L835 561 L839 556 L843 559 L841 553 Z" fill="#672D38"/>
+                <circle cx="835" cy="538" r="17.5" fill="url(#fruitGrad3)"/>
+                <ellipse cx="830" cy="533" rx="4.5" ry="7" transform="rotate(-24 830 533)" fill="#FFF" opacity="0.22"/>
+                <circle cx="828" cy="530" r="1.6" fill="#FFF" opacity="0.45"/>
+                <circle cx="840" cy="543" r="1.2" fill="#B89B68" opacity="0.6"/>
+                <circle class="fruit-focus-ring" cx="835" cy="538" r="24"/>
+                <circle class="tasted-indicator" cx="835" cy="538" r="21" stroke="#B89B68" stroke-width="1.2" stroke-dasharray="2 3" fill="none" opacity="0"/>
+                <circle cx="835" cy="538" r="32" class="fruit-hit-target" fill="rgba(0,0,0,0.001)" pointer-events="all"/>
+              </g>
+            </g>
+
+
+          </svg>
+        </div>
+      </div>
+
+      <!-- Helper / Atmosphere Prompt -->
+      <footer class="garden-footer">
+        <p class="garden-hint">Touch a fruit upon the bough</p>
+      </footer>
+    </section>
+
+    <!-- =======================================================================
+         2. CHARACTER PROFILE VIEW (Editorial Text Experience — No Portrait Image)
+         ======================================================================= -->
+    <section id="profile-view" class="view-section" aria-label="Character Profile" role="dialog" aria-modal="true">
+      <div class="profile-container">
+
+        <!-- Discreet Close Button -->
+        <button id="profile-close" class="profile-close-btn" type="button" aria-label="Close profile and return to garden">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <article class="profile-card">
+          <!-- Editorial Character Story Details (Pure Typography, Spacing & Mythology) -->
+          <div class="profile-content">
+            <span class="profile-eyebrow" id="profile-eyebrow">The Underworld Bough</span>
+            <h2 class="profile-name" id="profile-name">Character Name</h2>
+            
+            <div class="profile-meta">
+              <span class="meta-item" id="profile-age">Age — 26</span>
+              <span class="meta-divider" aria-hidden="true">·</span>
+              <span class="meta-item" id="profile-role">Role — The Memory Finder</span>
+            </div>
+
+            <div class="profile-ornament-line" aria-hidden="true"></div>
+
+            <p class="profile-bio" id="profile-bio">
+              “Tôi nên yêu em dưới cái tên nào đây?”
+            </p>
+
+            <!-- THE EXCLUSIVE CTA: "Taste them." directly opens Google AI Studio -->
+            <div class="profile-actions">
+              <a id="taste-cta" class="taste-cta" href="#" target="_blank" rel="noopener noreferrer" aria-label="Taste them — opens Google AI Studio in a new tab">
+                <span class="taste-cta-text">Taste them.</span>
+                <span class="taste-cta-line" aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <!-- Return to the Garden -->
+            <button id="return-btn" class="return-garden-btn" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+              <span>Return to the garden</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. ARCHIVE VIEW (Secondary Directory for Preserved Stories)
+         ======================================================================= -->
+    <section id="archive-view" class="view-section" aria-label="Character Archive">
+      <div class="archive-container">
+
+        <header class="archive-header">
+          <h2 class="archive-title">Archive</h2>
+          <p class="archive-subheading">Those who have already left their mark.</p>
+        </header>
+
+        <!-- Search & Filter Controls -->
+        <div class="archive-controls">
+          <div class="archive-search-wrap">
+            <svg class="archive-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="archive-search" class="archive-search-input" placeholder="Search by name, role, or words..." aria-label="Search characters">
+          </div>
+
+          <div class="archive-filter-chips" id="archive-filters" role="group" aria-label="Filter characters by role">
+            <button class="filter-chip active" data-filter="all" type="button">All Souls</button>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="archive-grid" id="archive-grid">
+          <!-- Dynamically populated from characters.json without images -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="archive-empty-state" id="archive-empty">
+          No soul by that name lingers in these boughs.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Authoritative Character Dataset Fallback (Guarantees full interactivity when opening directly via file://) -->
+  <script id="characters-fallback-data" type="application/json">
+[
+  {
+    "id": "character-01",
+    "name": "Âu Dương Dục Thần",
+    "age": 26,
+    "role": "The Memory Finder",
+    "bio": "“Tôi nên yêu em dưới cái tên nào đây?”",
+    "pomegranateId": "pomegranate-01",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221dFzzqLGR73LStFErSkaIJnFi048yFaU2%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-02",
+    "name": "Tống Hòa",
+    "age": 28,
+    "role": "The Puppeteer",
+    "bio": "“Dẫu có thành tro tàn, cũng tính là tuyệt mỹ.”",
+    "pomegranateId": "pomegranate-02",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2219R25qGsWePwHcUh_MoZYPLn4t_8MRA4G%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-03",
+    "name": "Tống Hòa",
+    "age": 28,
+    "role": "The Puppeteer",
+    "bio": "“Dẫu có thành tro tàn, cũng tính là tuyệt mỹ.”",
+    "pomegranateId": "pomegranate-03",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Y8subp06pXP5WvUI__6rsEKmBNF5CRsb%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-04",
+    "name": "Đằng Thiếu Khanh",
+    "age": 30,
+    "role": "The Quiet Protector",
+    "bio": "“Đố ai nằm võng không đưa. /Đố ai gặp lại người xưa không nhìn.”",
+    "pomegranateId": "pomegranate-04",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2214Z5xPQX80CmtSIxhGhq1cgyvAm-NgGsh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-05",
+    "name": "Thịnh Cảnh Hiên",
+    "age": 32,
+    "role": "The Quiet Protector",
+    "bio": "“Kể từ giờ, anh sẽ là đôi tai của em.”",
+    "pomegranateId": "pomegranate-05",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221wcCLlmikS8Ad-wlD52i7Ywsqxi7qDe0C%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-06",
+    "name": "Hồ Hoàng Nam",
+    "age": 17,
+    "role": "The Vulnerable",
+    "bio": "“Ngày cô ấy đi theo chân mẹ cha, chàng trai bơ vơ từ xa trong tim hụt hẫng như mất một thứ gì...”",
+    "pomegranateId": "pomegranate-06",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ZzttWEmhmyl6eRUD_pJus3rA0cRkUbPI%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-07",
+    "name": "Phan An Dương",
+    "age": 23,
+    "role": "The Repressed Lover",
+    "bio": "“Cũng liều nhắm mắt đưa chân. /Để xem con tạo xoay vần đến đâu.”",
+    "pomegranateId": "pomegranate-07",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221eEhN69IhEfbaXRvnSM1oUrhR1rOmQxp9%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-08",
+    "name": "Trần Minh Khải",
+    "age": 23,
+    "role": "The Latecomer",
+    "bio": "“Rốt cuộc hắn đã đến muộn từ bao giờ?”",
+    "pomegranateId": "pomegranate-08",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Zm2bj1G46F54UkjUihL5SparHqY5ED1R%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-09",
+    "name": "Trần Minh Sơn",
+    "age": 26,
+    "role": "The Quiet Protector",
+    "bio": "“Nếu không giả vờ khờ khạo, có lẽ hắn đã phải vùi mình nơi giếng sâu.”",
+    "pomegranateId": "pomegranate-09",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UR8K2A_vo_or13gm21Slh0vRYUj2vlmT%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-10",
+    "name": "Phó Trình Ngôn",
+    "age": 28,
+    "role": "The Quiet Protector",
+    "bio": "“Nếu anh không phát hiện, em muốn tước đi tư cách làm chồng của anh đến bao giờ?”",
+    "pomegranateId": "pomegranate-10",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221-KQUZu2plDAYg3D2rxcoDbJ5lw8gebUi%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-11",
+    "name": "Trương Đình Vĩnh Nguyên",
+    "age": 24,
+    "role": "The Enthusiast",
+    "bio": "“Game và em, anh chọn cả hai.”",
+    "pomegranateId": "pomegranate-11",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221aj6y21Wu923UQSwNmD_F-HVcao3ujosj%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-12",
+    "name": "Đặng Hoàng Quân",
+    "age": 24,
+    "role": "The Quiet Protector",
+    "bio": "“Có những mối quan hệ không thể tồn tại nếu mọi thứ đều cần được xác nhận trước.”",
+    "pomegranateId": "pomegranate-12",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221c5s32gfKAgm-VNqje-hbLC0pK8hwyXY1%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-13",
+    "name": "Lê Quốc Duy",
+    "age": 18,
+    "role": "The Burdened",
+    "bio": "“Ngọn cỏ ven đường thôi mà, làm sao với được mây.”",
+    "pomegranateId": "pomegranate-13",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221KAvWmmXIGVB4x_37AEGgv_u7xEWCv_6h%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-14",
+    "name": "Khương Vũ Hoàng Minh",
+    "age": 26,
+    "role": "The Spotlight",
+    "bio": "“Tôi biết em thích tôi. Tôi duyệt đấy.”",
+    "pomegranateId": "pomegranate-14",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sCvKPgUqTfxA_fbIJ3ZHnIWM0yrRKX7A%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-15",
+    "name": "Julian Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Ta đã tìm em trong đống tro tàn suốt năm năm qua.”",
+    "pomegranateId": "pomegranate-15",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221vzV6ZdEUSAPJPeMjxUidbePIqGCAi1h0%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-16",
+    "name": "Elias Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Ta chỉ tin vào những thứ mà ta có thể chứng minh rằng nó tồn tại.”",
+    "pomegranateId": "pomegranate-16",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211WnRNhWJr-wxOxG3wvX9zqMvQLl3mS0e%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-17",
+    "name": "Lucian Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Lấy em chưa bao giờ là một sự lựa chọn thay thế.”",
+    "pomegranateId": "pomegranate-17",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yGZbS3dJFQaHc4u4AHfkmMo2vnbcxqNy%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-18",
+    "name": "Adrien Ardent",
+    "age": 25,
+    "role": "The Proud Knight",
+    "bio": "“Ta không xứng được hôn lên đôi tay ngà ngọc của người.”",
+    "pomegranateId": "pomegranate-18",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yrqOb-pgIEd_3qpf4JO3eCXWPfVAw9cV%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-19",
+    "name": "Cedric Maximilian",
+    "age": 35,
+    "role": "The Quiet Protector",
+    "bio": "“Ngoài nàng ra, ta chưa từng nảy sinh cảm giác này với ai. Cảm giác muốn đạp đổ cả danh dự của bản thân mà yêu nàng.”",
+    "pomegranateId": "pomegranate-19",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221NLHFMDL6ZDgM3DX4v4QpEzNoKvV53kFJ%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-20",
+    "name": "Caspian Ravenshire",
+    "age": 22,
+    "role": "The Charming",
+    "bio": "“Ta không cho phép nàng phớt lờ ta.”",
+    "pomegranateId": "pomegranate-20",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UwOQWq5Z75Y5b5RqCiRtE-WHpw3dVqvc%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-21",
+    "name": "Cha Kang Woo",
+    "age": 28,
+    "role": "The Rebel",
+    "bio": "“Tôi sẽ đập nát đế chế này. Em có bằng lòng cùng tôi làm chuyện đó không?”",
+    "pomegranateId": "pomegranate-21",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UwOQWq5Z75Y5b5RqCiRtE-WHpw3dVqvc%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-22",
+    "name": "Kang Young Hwan",
+    "age": 18,
+    "role": "The Possessor",
+    "bio": "“Cậu nghĩ cậu là ai mà ném tiền vào mặt tôi?”",
+    "pomegranateId": "pomegranate-22",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221xUKe4LUpHKaSy70Q6GcPUzppxM1oYPdh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-23",
+    "name": "Yoon Ha Neul",
+    "age": 32,
+    "role": "The Quiet Protector",
+    "bio": "“Xin lỗi vì hoang phí mười năm thanh xuân của em.”",
+    "pomegranateId": "pomegranate-23",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221cyki4LXJmNq1ZJ_FbdIUZuRSBmR7WAmt%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-24",
+    "name": "Yoon Eun Woo",
+    "age": 17,
+    "role": "The Gentle Anchor",
+    "bio": "“Khóc đi. Tớ thay em ấy xin lỗi cậu.”",
+    "pomegranateId": "pomegranate-24",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221fj64uUibTcGdAsWzf_6fY-1bIfZJ-BXh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-25",
+    "name": "Yoon Ji Ahn",
+    "age": 20,
+    "role": "The Golden Retriever",
+    "bio": "“Tôi phá kỷ lục của chị rồi đấy!”",
+    "pomegranateId": "pomegranate-25",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221KQaUw_30R6uh5FUNAkddiz0fIiPQoaTQ%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-26",
+    "name": "Satou Asahi",
+    "age": 28,
+    "role": "The Vulnerable",
+    "bio": "“Tôi đã dặn em cả trăm ngàn lần rồi là đừng yêu tôi!”",
+    "pomegranateId": "pomegranate-26",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221SsHBgLq4g2le5f7aeLWVtH0Oe11iR_Ah%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-27",
+    "name": "Kanzaki Yusei",
+    "age": 26,
+    "role": "The Imperfect Perfectionist",
+    "bio": "“Đáng ra lúc đó anh nên giữ em lại, thay vì nghĩ rằng em sẽ không rời đi…”",
+    "pomegranateId": "pomegranate-27",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221-DZNpZFtW_ca4CXwFcR-Be2hWquFMcoI%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-28",
+    "name": "Trần Hoài Nam",
+    "age": 28,
+    "role": "The Gentle Anchor",
+    "bio": "“Em còn định nhớ nhung nó tới khi nào?”",
+    "pomegranateId": "pomegranate-28",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221SwmW1CD1NniwSJKIyzl6QBNqsfZID4wR%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-29",
+    "name": "Trần Lê Vĩnh An",
+    "age": 28,
+    "role": "The Gentle Anchor",
+    "bio": "“Mọi việc cứ để cho anh lo.”",
+    "pomegranateId": "pomegranate-29",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2218x9NjGqWqPMqLUyuygYH_QJbAGGI3LNL%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-30",
+    "name": "Đặng Khải Nguyên",
+    "age": 32,
+    "role": "The Gentle Anchor",
+    "bio": "“Có chuyện gì cứ bình tĩnh lại đã rồi hẵng nói.”",
+    "pomegranateId": "pomegranate-30",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221WtEGfkpkOzTlPstlNsfqQDwqR4C84ZPy%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  }
+]
+
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
+

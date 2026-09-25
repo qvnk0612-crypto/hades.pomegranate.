@@ -1,0 +1,272 @@
+[
+  {
+    "id": "character-01",
+    "name": "Âu Dương Dục Thần",
+    "age": 26,
+    "role": "The Memory Finder",
+    "bio": "“Tôi nên yêu em dưới cái tên nào đây?”",
+    "pomegranateId": "pomegranate-01",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221dFzzqLGR73LStFErSkaIJnFi048yFaU2%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-02",
+    "name": "Tống Hòa",
+    "age": 28,
+    "role": "The Puppeteer",
+    "bio": "“Dẫu có thành tro tàn, cũng tính là tuyệt mỹ.”",
+    "pomegranateId": "pomegranate-02",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2219R25qGsWePwHcUh_MoZYPLn4t_8MRA4G%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-03",
+    "name": "Tống Hòa",
+    "age": 28,
+    "role": "The Puppeteer",
+    "bio": "“Dẫu có thành tro tàn, cũng tính là tuyệt mỹ.”",
+    "pomegranateId": "pomegranate-03",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Y8subp06pXP5WvUI__6rsEKmBNF5CRsb%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-04",
+    "name": "Đằng Thiếu Khanh",
+    "age": 30,
+    "role": "The Quiet Protector",
+    "bio": "“Đố ai nằm võng không đưa. /Đố ai gặp lại người xưa không nhìn.”",
+    "pomegranateId": "pomegranate-04",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2214Z5xPQX80CmtSIxhGhq1cgyvAm-NgGsh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-05",
+    "name": "Thịnh Cảnh Hiên",
+    "age": 32,
+    "role": "The Quiet Protector",
+    "bio": "“Kể từ giờ, anh sẽ là đôi tai của em.”",
+    "pomegranateId": "pomegranate-05",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221wcCLlmikS8Ad-wlD52i7Ywsqxi7qDe0C%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-06",
+    "name": "Hồ Hoàng Nam",
+    "age": 17,
+    "role": "The Vulnerable",
+    "bio": "“Ngày cô ấy đi theo chân mẹ cha, chàng trai bơ vơ từ xa trong tim hụt hẫng như mất một thứ gì...”",
+    "pomegranateId": "pomegranate-06",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ZzttWEmhmyl6eRUD_pJus3rA0cRkUbPI%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-07",
+    "name": "Phan An Dương",
+    "age": 23,
+    "role": "The Repressed Lover",
+    "bio": "“Cũng liều nhắm mắt đưa chân. /Để xem con tạo xoay vần đến đâu.”",
+    "pomegranateId": "pomegranate-07",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221eEhN69IhEfbaXRvnSM1oUrhR1rOmQxp9%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-08",
+    "name": "Trần Minh Khải",
+    "age": 23,
+    "role": "The Latecomer",
+    "bio": "“Rốt cuộc hắn đã đến muộn từ bao giờ?”",
+    "pomegranateId": "pomegranate-08",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Zm2bj1G46F54UkjUihL5SparHqY5ED1R%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-09",
+    "name": "Trần Minh Sơn",
+    "age": 26,
+    "role": "The Quiet Protector",
+    "bio": "“Nếu không giả vờ khờ khạo, có lẽ hắn đã phải vùi mình nơi giếng sâu.”",
+    "pomegranateId": "pomegranate-09",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UR8K2A_vo_or13gm21Slh0vRYUj2vlmT%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-10",
+    "name": "Phó Trình Ngôn",
+    "age": 28,
+    "role": "The Quiet Protector",
+    "bio": "“Nếu anh không phát hiện, em muốn tước đi tư cách làm chồng của anh đến bao giờ?”",
+    "pomegranateId": "pomegranate-10",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221-KQUZu2plDAYg3D2rxcoDbJ5lw8gebUi%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-11",
+    "name": "Trương Đình Vĩnh Nguyên",
+    "age": 24,
+    "role": "The Enthusiast",
+    "bio": "“Game và em, anh chọn cả hai.”",
+    "pomegranateId": "pomegranate-11",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221aj6y21Wu923UQSwNmD_F-HVcao3ujosj%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-12",
+    "name": "Đặng Hoàng Quân",
+    "age": 24,
+    "role": "The Quiet Protector",
+    "bio": "“Có những mối quan hệ không thể tồn tại nếu mọi thứ đều cần được xác nhận trước.”",
+    "pomegranateId": "pomegranate-12",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221c5s32gfKAgm-VNqje-hbLC0pK8hwyXY1%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-13",
+    "name": "Lê Quốc Duy",
+    "age": 18,
+    "role": "The Burdened",
+    "bio": "“Ngọn cỏ ven đường thôi mà, làm sao với được mây.”",
+    "pomegranateId": "pomegranate-13",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221KAvWmmXIGVB4x_37AEGgv_u7xEWCv_6h%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-14",
+    "name": "Khương Vũ Hoàng Minh",
+    "age": 26,
+    "role": "The Spotlight",
+    "bio": "“Tôi biết em thích tôi. Tôi duyệt đấy.”",
+    "pomegranateId": "pomegranate-14",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221sCvKPgUqTfxA_fbIJ3ZHnIWM0yrRKX7A%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-15",
+    "name": "Julian Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Ta đã tìm em trong đống tro tàn suốt năm năm qua.”",
+    "pomegranateId": "pomegranate-15",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221vzV6ZdEUSAPJPeMjxUidbePIqGCAi1h0%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-16",
+    "name": "Elias Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Ta chỉ tin vào những thứ mà ta có thể chứng minh rằng nó tồn tại.”",
+    "pomegranateId": "pomegranate-16",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211WnRNhWJr-wxOxG3wvX9zqMvQLl3mS0e%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-17",
+    "name": "Lucian Ravenshire",
+    "age": 25,
+    "role": "The Quiet Protector",
+    "bio": "“Lấy em chưa bao giờ là một sự lựa chọn thay thế.”",
+    "pomegranateId": "pomegranate-17",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yGZbS3dJFQaHc4u4AHfkmMo2vnbcxqNy%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-18",
+    "name": "Adrien Ardent",
+    "age": 25,
+    "role": "The Proud Knight",
+    "bio": "“Ta không xứng được hôn lên đôi tay ngà ngọc của người.”",
+    "pomegranateId": "pomegranate-18",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yrqOb-pgIEd_3qpf4JO3eCXWPfVAw9cV%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-19",
+    "name": "Cedric Maximilian",
+    "age": 35,
+    "role": "The Quiet Protector",
+    "bio": "“Ngoài nàng ra, ta chưa từng nảy sinh cảm giác này với ai. Cảm giác muốn đạp đổ cả danh dự của bản thân mà yêu nàng.”",
+    "pomegranateId": "pomegranate-19",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221NLHFMDL6ZDgM3DX4v4QpEzNoKvV53kFJ%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-20",
+    "name": "Caspian Ravenshire",
+    "age": 22,
+    "role": "The Charming",
+    "bio": "“Ta không cho phép nàng phớt lờ ta.”",
+    "pomegranateId": "pomegranate-20",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UwOQWq5Z75Y5b5RqCiRtE-WHpw3dVqvc%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-21",
+    "name": "Cha Kang Woo",
+    "age": 28,
+    "role": "The Rebel",
+    "bio": "“Tôi sẽ đập nát đế chế này. Em có bằng lòng cùng tôi làm chuyện đó không?”",
+    "pomegranateId": "pomegranate-21",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221UwOQWq5Z75Y5b5RqCiRtE-WHpw3dVqvc%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-22",
+    "name": "Kang Young Hwan",
+    "age": 18,
+    "role": "The Possessor",
+    "bio": "“Cậu nghĩ cậu là ai mà ném tiền vào mặt tôi?”",
+    "pomegranateId": "pomegranate-22",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221xUKe4LUpHKaSy70Q6GcPUzppxM1oYPdh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-23",
+    "name": "Yoon Ha Neul",
+    "age": 32,
+    "role": "The Quiet Protector",
+    "bio": "“Xin lỗi vì hoang phí mười năm thanh xuân của em.”",
+    "pomegranateId": "pomegranate-23",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221cyki4LXJmNq1ZJ_FbdIUZuRSBmR7WAmt%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-24",
+    "name": "Yoon Eun Woo",
+    "age": 17,
+    "role": "The Gentle Anchor",
+    "bio": "“Khóc đi. Tớ thay em ấy xin lỗi cậu.”",
+    "pomegranateId": "pomegranate-24",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221fj64uUibTcGdAsWzf_6fY-1bIfZJ-BXh%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-25",
+    "name": "Yoon Ji Ahn",
+    "age": 20,
+    "role": "The Golden Retriever",
+    "bio": "“Tôi phá kỷ lục của chị rồi đấy!”",
+    "pomegranateId": "pomegranate-25",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221KQaUw_30R6uh5FUNAkddiz0fIiPQoaTQ%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-26",
+    "name": "Satou Asahi",
+    "age": 28,
+    "role": "The Vulnerable",
+    "bio": "“Tôi đã dặn em cả trăm ngàn lần rồi là đừng yêu tôi!”",
+    "pomegranateId": "pomegranate-26",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221SsHBgLq4g2le5f7aeLWVtH0Oe11iR_Ah%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-27",
+    "name": "Kanzaki Yusei",
+    "age": 26,
+    "role": "The Imperfect Perfectionist",
+    "bio": "“Đáng ra lúc đó anh nên giữ em lại, thay vì nghĩ rằng em sẽ không rời đi…”",
+    "pomegranateId": "pomegranate-27",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221-DZNpZFtW_ca4CXwFcR-Be2hWquFMcoI%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-28",
+    "name": "Trần Hoài Nam",
+    "age": 28,
+    "role": "The Gentle Anchor",
+    "bio": "“Em còn định nhớ nhung nó tới khi nào?”",
+    "pomegranateId": "pomegranate-28",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221SwmW1CD1NniwSJKIyzl6QBNqsfZID4wR%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-29",
+    "name": "Trần Lê Vĩnh An",
+    "age": 28,
+    "role": "The Gentle Anchor",
+    "bio": "“Mọi việc cứ để cho anh lo.”",
+    "pomegranateId": "pomegranate-29",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2218x9NjGqWqPMqLUyuygYH_QJbAGGI3LNL%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  },
+  {
+    "id": "character-30",
+    "name": "Đặng Khải Nguyên",
+    "age": 32,
+    "role": "The Gentle Anchor",
+    "bio": "“Có chuyện gì cứ bình tĩnh lại đã rồi hẵng nói.”",
+    "pomegranateId": "pomegranate-30",
+    "googleAIStudioUrl": "https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221WtEGfkpkOzTlPstlNsfqQDwqR4C84ZPy%22%5D,%22action%22:%22open%22,%22userId%22:%22109559160960287690837%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+  }
+]
